@@ -281,33 +281,33 @@ export default function Home() {
           Mobile: rosto enquadrado + scrim escuro, texto no topo-esquerda
           PC: foto ancorada à direita, texto à esquerda
       ══════════════════════════════════════ */}
-      <section id="home" className="relative overflow-hidden" style={{ minHeight: "92svh" }}>
-        {/* Foto de fundo — enquadra bem no mobile, ancorada à direita no PC */}
+      <section id="home" className="relative overflow-hidden min-h-[92svh]">
+        {/* Doutora como fundo — full-bleed cobrindo o hero */}
         <div className="absolute inset-0">
           <Image
             src="/images/Lucia.png"
             alt="Lucia Lafayete — Fisioterapeuta"
             fill
-            className="object-cover object-top md:object-[center_right]"
+            className="object-cover object-[50%_8%] md:object-[center_right]"
             priority
             sizes="100vw"
           />
         </div>
 
-        {/* Overlay MOBILE — escurece só a base (texto no rodapé), rosto no topo livre */}
+        {/* Overlay MOBILE — escurece a base (texto legível) mantendo rosto/corpo no topo livre */}
         <div className="absolute inset-0 md:hidden" style={{
-          background: "linear-gradient(to top, rgba(13,90,99,0.82) 0%, rgba(13,90,99,0.45) 38%, transparent 62%)",
+          background: "linear-gradient(to top, rgba(13,90,99,0.9) 0%, rgba(13,90,99,0.5) 42%, transparent 70%)",
         }} aria-hidden />
 
         {/* Overlay DESKTOP — escuro à esquerda (texto), transparente à direita (foto) */}
-        <div className="absolute inset-0 hidden md:block" style={{
+        <div className="hidden md:block absolute inset-0" style={{
           background: [
             "linear-gradient(to right, rgba(13,90,99,0.92) 0%, rgba(13,90,99,0.72) 42%, rgba(13,90,99,0.25) 70%, transparent 92%)",
             "linear-gradient(to top, rgba(13,90,99,0.75) 0%, rgba(13,90,99,0.2) 40%)",
           ].join(", "),
         }} aria-hidden />
 
-        {/* Conteúdo — texto no rodapé (mobile) p/ deixar o rosto livre, centralizado no PC */}
+        {/* Conteúdo — texto sobreposto no rodapé (mobile) e à esquerda (desktop), tudo visível na 1ª dobra */}
         <div className="relative z-10 h-full min-h-[92svh] max-w-6xl mx-auto px-5
           flex flex-col justify-end md:justify-center pt-20 pb-12 md:py-28">
           <motion.div
@@ -315,11 +315,11 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-lg text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-4 text-white/85">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-3 text-white/85">
               Fisioterapia · Osteopatia · Pilates
             </p>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5 text-white"
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-3 text-white"
               style={{ fontFamily: "Sora, sans-serif" }}>
               Lucia<br />Lafayete
             </h1>
@@ -331,23 +331,23 @@ export default function Home() {
               <strong className="text-white">Leblon</strong> e a domicílio.
             </p>
 
-            <p className="text-sm font-semibold text-white/85 mb-8">
+            <p className="text-sm font-semibold text-white/85 mb-5">
               📍 Leblon, Rio de Janeiro — atende também a domicílio
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-row gap-2 md:gap-3">
               <motion.a
                 href={WA} target="_blank" rel="noreferrer"
                 whileTap={{ scale: 0.96 }}
-                className="flex items-center justify-center gap-2 bg-[#cc3366] text-white
-                  font-semibold px-6 py-4 rounded-full text-sm shadow-lg active:bg-[#b02d59]
+                className="flex-1 flex items-center justify-center gap-2 bg-[#cc3366] text-white
+                  font-semibold px-4 py-3.5 rounded-full text-sm shadow-lg active:bg-[#b02d59]
                   hover:bg-[#b02d59] transition-colors">
                 <IconWA />
-                Agendar pelo WhatsApp
+                Agendar
               </motion.a>
               <a href="#servicos"
-                className="flex items-center justify-center px-6 py-4 rounded-full text-sm
-                  font-medium border border-white/35 text-white hover:border-white/60
+                className="flex-1 flex items-center justify-center px-4 py-3.5 rounded-full text-sm
+                  font-medium border border-white/40 text-white hover:border-white/70
                   transition-colors">
                 Ver serviços
               </a>
