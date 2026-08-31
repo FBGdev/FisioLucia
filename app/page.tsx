@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 
 /* ─── CONSTANTES ─── */
 const WA = "https://api.whatsapp.com/send?l=pt_BR&phone=5521972796543";
-const IG = "https://instagram.com/lucialafayete";
+const IG = "https://instagram.com/lucialafayetefisio";
 const TEL = "tel:+5521972796543";
 // Leblon, RJ — embed público sem API key
 const MAPS_EMBED =
@@ -63,24 +63,19 @@ const servicos = [
 
 const depoimentos = [
   {
-    nome: "Ana Paula M.",
+    nome: "@edilzab",
     texto:
-      "Atendimento incrível. A Lucia é extremamente atenciosa e comprometida. Em poucas sessões já senti uma melhora enorme nas dores que tinha há meses.",
+      "Excelente profissional!! Dedicada, atenciosa e empática!! Cuidou da minha mãe com muito carinho e cuidado. Super indico!!",
   },
   {
-    nome: "Carlos Eduardo R.",
+    nome: "@ineslsilveira",
     texto:
-      "Fiz reabilitação pós-cirúrgica com a Lucia e o resultado foi surpreendente. Ela acompanha cada etapa, adapta os exercícios e explica tudo com clareza.",
+      "Ah essa é top demais, profissional atenciosa e comprometida do que faz!",
   },
   {
-    nome: "Fernanda S.",
+    nome: "@simonefgon",
     texto:
-      "Comecei o Pilates sem nunca ter praticado. A atenção que ela dá a cada aluno é diferente de tudo que já vi. Hoje tenho muito mais consciência corporal.",
-  },
-  {
-    nome: "Roberto A.",
-    texto:
-      "Tratei uma tendinopatia crônica com ondas de choque. Em poucas semanas a dor que me acompanhava há mais de um ano tinha sumido.",
+      "Recomendo demais! Comprometida ao máximo com o paciente.",
   },
 ];
 
@@ -324,16 +319,12 @@ export default function Home() {
               Lucia<br />Lafayete
             </h1>
 
-            <p className="text-base md:text-lg text-white leading-relaxed mb-3">
-              Fisioterapeuta especializada em{" "}
-              <strong className="text-white">Osteopatia</strong>.
-              Atendimento personalizado no{" "}
-              <strong className="text-white">Leblon</strong> e a domicílio.
-            </p>
-
-            <p className="text-sm font-semibold text-white/85 mb-5">
-              📍 Leblon, Rio de Janeiro — atende também a domicílio
-            </p>
+            <p className="text-base md:text-lg text-white leading-relaxed mb-5">
+                Fisioterapeuta especializada em{" "}
+                <strong className="text-white">Osteopatia</strong>.
+                Consultório no{" "}
+                <strong className="text-white">Leblon</strong>, Rio de Janeiro.
+              </p>
 
             <div className="flex flex-row gap-2 md:gap-3">
               <motion.a
@@ -575,13 +566,12 @@ export default function Home() {
                 &ldquo;{depoimentos[activeDepo].texto}&rdquo;
               </p>
               <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div className="w-9 h-9 rounded-full bg-[#cc3366] flex items-center justify-center
-                  text-white font-bold text-sm flex-shrink-0">
-                  {depoimentos[activeDepo].nome.charAt(0)}
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#cc2366] flex items-center justify-center flex-shrink-0">
+                  <IconIG className="w-4 h-4 text-white" />
                 </div>
                 <div>
                   <p className="font-semibold text-[#222] text-sm">{depoimentos[activeDepo].nome}</p>
-                  <p className="text-[#69727d] text-xs">Paciente · Lucia Lafayete</p>
+                  <p className="text-[#69727d] text-xs">via Instagram</p>
                 </div>
               </div>
             </motion.div>
@@ -911,7 +901,7 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <p className="font-bold text-[#222] text-sm">Instagram</p>
-                  <p className="text-[#69727d] text-xs mt-0.5">@lucialafayete</p>
+                  <p className="text-[#69727d] text-xs mt-0.5">@lucialafayetefisio</p>
                 </div>
               </a>
             </FadeIn>
