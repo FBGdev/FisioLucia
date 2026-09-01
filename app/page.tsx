@@ -151,7 +151,7 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <div className="hidden md:flex bg-[#cc3366] text-white py-2 px-4 justify-end gap-6 text-xs">
         <a href={TEL} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
-          aria-label="Ligar para Lucia Lafayete">
+          aria-label="Ligar para Lúcia Lafayete">
           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
           </svg>
@@ -183,7 +183,7 @@ export default function Home() {
           <a href="#" className="flex items-center flex-shrink-0">
             <Image
               src="/images/Lucia-logo.svg"
-              alt="Lucia Lafayete"
+              alt="Lúcia Lafayete"
               width={140}
               height={48}
               className="h-11 md:h-12 w-auto object-contain"
@@ -281,7 +281,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="/images/Lucia.png"
-            alt="Lucia Lafayete — Fisioterapeuta"
+            alt="Lúcia Lafayete — Fisioterapeuta"
             fill
             className="object-cover object-[50%_8%] md:object-[center_right]"
             priority
@@ -316,7 +316,7 @@ export default function Home() {
 
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-3 text-white"
               style={{ fontFamily: "Sora, sans-serif" }}>
-              Lucia<br />Lafayete
+              Lúcia<br />Lafayete
             </h1>
 
             <p className="text-base md:text-lg text-white leading-relaxed mb-5">
@@ -436,7 +436,7 @@ export default function Home() {
             </p>
             <h2 className="text-2xl md:text-4xl font-bold text-[#222] text-center mb-10"
               style={{ fontFamily: "Sora, sans-serif" }}>
-              Quem é Lucia Lafayete?
+              Quem é Lúcia Lafayete?
             </h2>
           </FadeIn>
 
@@ -447,7 +447,7 @@ export default function Home() {
                 style={{ aspectRatio: "3/4" }}>
                 <Image
                   src="/images/Lucia.png"
-                  alt="Lucia Lafayete — Fisioterapeuta"
+                  alt="Lúcia Lafayete — Fisioterapeuta"
                   width={400}
                   height={533}
                   className="w-full h-full object-cover object-top"
@@ -543,7 +543,7 @@ export default function Home() {
               O que dizem os pacientes
             </h2>
             <p className="text-[#69727d] text-center text-sm max-w-xl mx-auto mb-10">
-              Veja como o atendimento da Lucia tem ajudado pessoas a recuperarem qualidade de vida.
+              Veja como o atendimento da Lúcia tem ajudado pessoas a recuperarem qualidade de vida.
             </p>
           </FadeIn>
 
@@ -759,12 +759,12 @@ export default function Home() {
               <p className="text-[#4a4a4a] text-sm leading-relaxed mb-6">
                 Olá! Gostaria de agendar uma{" "}
                 <strong className="text-[#cc3366]">{servicoSel.toLowerCase()}</strong>{" "}
-                com a Lucia Lafayete.
+                com a Lúcia Lafayete.
               </p>
 
               <a
                 href={`${WA}&text=${encodeURIComponent(
-                  `Olá, Lucia! Gostaria de agendar um atendimento de ${servicoSel}.`
+                  `Olá, Lúcia! Gostaria de agendar um atendimento de ${servicoSel}.`
                 )}`}
                 target="_blank" rel="noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#25D366] text-white
@@ -921,9 +921,9 @@ export default function Home() {
             <div className="flex flex-col items-center md:items-start gap-3 max-w-xs">
               <Image
                 src="/images/Lucia-logo.svg"
-                alt="Lucia Lafayete"
-                width={140}
-                height={46}
+              alt="Lúcia Lafayete"
+              width={140}
+              height={46}
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
               <p className="text-white/65 text-xs text-center md:text-left leading-relaxed">
@@ -966,7 +966,7 @@ export default function Home() {
                 Agendar pelo WhatsApp
               </a>
               <a href={TEL} className="text-white/60 text-sm hover:text-white transition-colors"
-                aria-label="Ligar para Lucia Lafayete">
+          aria-label="Ligar para Lúcia Lafayete">
                 (21) 97279-6543
               </a>
             </div>
@@ -975,7 +975,7 @@ export default function Home() {
           <div className="border-t border-white/15 pt-6 flex flex-col md:flex-row
             items-center justify-between gap-2">
             <p className="text-white/40 text-xs text-center">
-              © 2025 Lucia Lafayete Fisioterapia — Todos os direitos reservados.
+              © 2025 Lúcia Lafayete Fisioterapia — Todos os direitos reservados.
             </p>
             <p className="text-white/25 text-xs">CREFITO-2 · 290936-F · Leblon · RJ</p>
           </div>
