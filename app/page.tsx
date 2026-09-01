@@ -46,12 +46,12 @@ const servicos = [
     imgClass: "object-contain",
   },
   {
-    img: "/images/demo fisio.jpg",
+    img: "/images/demo fisio.png",
     titulo: "Fisioterapia",
     desc: "Avaliação individualizada para dor, disfunções musculoesqueléticas e reabilitação funcional.",
   },
   {
-    img: "/images/demo pilates.jpg",
+    img: "/images/demo pilates.png",
     titulo: "Pilates",
     desc: "Individual ou em grupo. Método aplicado com precisão, adaptado aos seus objetivos.",
     imgClass: "object-top",
