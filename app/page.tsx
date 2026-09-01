@@ -40,22 +40,22 @@ function FadeIn({
 /* ─── DADOS ─── */
 const servicos = [
   {
-    img: "/images/massage.png",
+    img: "/images/demo osteo.jpeg",
     titulo: "Osteopatia",
     desc: "Principal especialidade. Abordagem global que trata a causa real do problema, não só o sintoma.",
   },
   {
-    img: "/images/pilates-terapeutico.png",
+    img: "/images/demo fisio.jpg",
     titulo: "Fisioterapia",
     desc: "Avaliação individualizada para dor, disfunções musculoesqueléticas e reabilitação funcional.",
   },
   {
-    img: "/images/pilates-tower.png",
+    img: "/images/demo pilates.jpg",
     titulo: "Pilates",
     desc: "Individual ou em grupo. Método aplicado com precisão, adaptado aos seus objetivos.",
   },
   {
-    img: "/images/prevencao-quedas.png",
+    img: "/images/demo ondas.jpeg",
     titulo: "Ondas de Choque",
     desc: "Alta eficácia para tendinopatias, fascites e calcificações em poucos atendimentos.",
   },
@@ -280,7 +280,7 @@ export default function Home() {
         {/* Doutora como fundo — full-bleed cobrindo o hero */}
         <div className="absolute inset-0">
           <Image
-            src="/images/Lucia.png"
+            src="/images/lucia-bg.png"
             alt="Lúcia Lafayete — Fisioterapeuta"
             fill
             className="object-cover object-[50%_8%] md:object-[center_right]"
@@ -376,14 +376,14 @@ export default function Home() {
               <FadeIn key={s.titulo} delay={i * 0.08}>
                 <motion.div whileTap={{ scale: 0.98 }} className="flex flex-col items-center text-center">
                   {/* Imagem contida, sem crop */}
-                  <div className="w-full mb-4 rounded-2xl overflow-hidden shadow-sm bg-[#f7f3ef]
+                  <div className="w-full mb-4 rounded-2xl overflow-hidden shadow-sm
                     flex items-center justify-center" style={{ height: "160px" }}>
                     <Image
                       src={s.img}
                       alt={s.titulo}
                       width={300}
                       height={148}
-                      className="w-full h-full object-contain p-3"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <h3 className="text-[#222] font-bold text-sm md:text-base mb-1"
