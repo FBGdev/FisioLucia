@@ -43,6 +43,7 @@ const servicos = [
     img: "/images/demo osteo.jpeg",
     titulo: "Osteopatia",
     desc: "Principal especialidade. Abordagem global que trata a causa real do problema, não só o sintoma.",
+    imgClass: "object-contain",
   },
   {
     img: "/images/demo fisio.jpg",
@@ -53,6 +54,7 @@ const servicos = [
     img: "/images/demo pilates.jpg",
     titulo: "Pilates",
     desc: "Individual ou em grupo. Método aplicado com precisão, adaptado aos seus objetivos.",
+    imgClass: "object-top",
   },
   {
     img: "/images/demo ondas.jpeg",
@@ -383,7 +385,7 @@ export default function Home() {
                       alt={s.titulo}
                       width={300}
                       height={148}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${s.imgClass || ""}`}
                     />
                   </div>
                   <h3 className="text-[#222] font-bold text-sm md:text-base mb-1"
