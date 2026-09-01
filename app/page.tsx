@@ -180,13 +180,13 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
           {/* Logo SVG */}
-          <a href="#" className="flex items-center flex-shrink-0">
+          <a href="#" className="flex items-center flex-shrink-0 transition-transform duration-300 hover:scale-105">
             <Image
               src="/images/Lucia-logo.svg"
               alt="Lúcia Lafayete"
-              width={140}
-              height={48}
-              className="h-11 md:h-12 w-auto object-contain"
+              width={180}
+              height={60}
+              className="h-12 md:h-14 w-auto object-contain"
               priority
             />
           </a>
