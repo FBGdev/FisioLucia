@@ -43,7 +43,6 @@ const servicos = [
     img: "/images/demo osteo.jpeg",
     titulo: "Osteopatia",
     desc: "Principal especialidade. Abordagem global que trata a causa real do problema, não só o sintoma.",
-    imgClass: "object-contain",
   },
   {
     img: "/images/demo fisio.png",
@@ -54,7 +53,6 @@ const servicos = [
     img: "/images/demo pilates.png",
     titulo: "Pilates",
     desc: "Individual ou em grupo. Método aplicado com precisão, adaptado aos seus objetivos.",
-    imgClass: "object-top",
   },
   {
     img: "/images/demo ondas.jpeg",
@@ -285,7 +283,7 @@ export default function Home() {
             src="/images/lucia-bg.png"
             alt="Lúcia Lafayete — Fisioterapeuta"
             fill
-            className="object-cover object-[50%_8%] md:object-[center_right]"
+            className="object-cover object-center md:object-contain md:object-right"
             priority
             sizes="100vw"
           />
@@ -379,13 +377,13 @@ export default function Home() {
                 <motion.div whileTap={{ scale: 0.98 }} className="flex flex-col items-center text-center">
                   {/* Imagem contida, sem crop */}
                   <div className="w-full mb-4 rounded-2xl overflow-hidden shadow-sm
-                    flex items-center justify-center" style={{ height: "160px" }}>
+                    flex items-center justify-center" style={{ height: "220px" }}>
                     <Image
                       src={s.img}
                       alt={s.titulo}
                       width={300}
                       height={148}
-                      className={`w-full h-full object-cover ${s.imgClass || ""}`}
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <h3 className="text-[#222] font-bold text-sm md:text-base mb-1"
@@ -448,7 +446,7 @@ export default function Home() {
               <div className="w-56 sm:w-72 md:w-80 mx-auto rounded-3xl overflow-hidden shadow-xl"
                 style={{ aspectRatio: "3/4" }}>
                 <Image
-                  src="/images/Lucia.png"
+                  src="/images/lucia fundo 2.jpg"
                   alt="Lúcia Lafayete — Fisioterapeuta"
                   width={400}
                   height={533}
