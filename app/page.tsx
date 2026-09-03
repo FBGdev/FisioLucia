@@ -178,16 +178,17 @@ export default function Home() {
           backdropFilter: scrolled ? "blur(10px)" : "none",
         }}
       >
-        <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+        <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16 md:h-24">
           {/* Logo SVG */}
           <a href="#" className="flex items-center flex-shrink-0 transition-transform duration-300 hover:scale-105">
             <Image
               src="/images/Lucia-logo.svg"
               alt="Lúcia Lafayete"
-              width={180}
-              height={60}
-              className="h-12 md:h-14 w-auto object-contain"
+              width={200}
+              height={76}
+              className="h-14 md:h-20 w-auto object-contain"
               priority
+              style={{ filter: 'drop-shadow(0 2px 8px rgba(13, 90, 99, 0.15))' }}
             />
           </a>
 
@@ -922,9 +923,10 @@ export default function Home() {
               <Image
                 src="/images/Lucia-logo.svg"
               alt="Lúcia Lafayete"
-              width={140}
-              height={46}
-                className="h-12 w-auto object-contain brightness-0 invert"
+              width={200}
+              height={70}
+                className="h-20 w-auto object-contain brightness-0 invert"
+                style={{ filter: 'brightness(0) invert(1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1))' }}
               />
               <p className="text-white/65 text-xs text-center md:text-left leading-relaxed">
                 Fisioterapeuta especializada em Osteopatia.
