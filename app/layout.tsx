@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "Fisioterapia, Osteopatia e Pilates com Lúcia Lafayete. Atendimento personalizado no Leblon e a domicílio. Agende pelo WhatsApp.",
     images: [
       {
-        url: "/images/lucia fundo 2.jpg",
+        url: "/images/lucia-fundo-2.jpg",
         width: 1080,
         height: 1350,
         alt: "Lúcia Lafayete — Fisioterapeuta",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
     title: "Lúcia Lafayete — Fisioterapia e Osteopatia | Leblon, RJ",
     description:
       "Fisioterapia, Osteopatia e Pilates com Lúcia Lafayete. Atendimento personalizado no Leblon e a domicílio.",
-    images: ["/images/lucia fundo 2.jpg"],
+    images: ["/images/lucia-fundo-2.jpg"],
   },
   robots: {
     index: true,
     follow: true,
   },
   icons: {
-    icon: "/images/Lucia-logo.svg",
+    icon: "/images/logo.svg",
   },
 };
 
@@ -59,7 +59,7 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   name: "Lúcia Lafayete Fisioterapia",
-  image: "/images/lucia fundo 2.jpg",
+  image: "/images/lucia-fundo-2.jpg",
   url: "https://lucialafayete.com.br",
   telephone: WHATSAPP_DISPLAY,
   email: "contato@lucialafayete.com.br",
@@ -85,6 +85,10 @@ const localBusinessJsonLd = {
   founder: {
     "@type": "Person",
     name: "Lúcia Lafayete",
+    alumniOf: {
+      "@type": "Organization",
+      name: "Escola de Osteopatia de Madrid (EOM)",
+    },
   },
   knowsAbout: ["Osteopatia", "Fisioterapia", "Pilates", "Ondas de Choque"],
 };

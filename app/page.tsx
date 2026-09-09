@@ -38,26 +38,34 @@ function FadeIn({
 }
 
 /* ─── DADOS ─── */
-const servicos = [
+const servicos: { img?: string; titulo: string; desc: string }[] = [
   {
-    img: "/images/demo osteo.jpeg",
+    img: "/images/demo-osteo.jpeg",
     titulo: "Osteopatia",
     desc: "Principal especialidade. Abordagem global que trata a causa real do problema, não só o sintoma.",
   },
   {
-    img: "/images/demo fisio.png",
+    img: "/images/demo-fisio.png",
     titulo: "Fisioterapia",
     desc: "Avaliação individualizada para dor, disfunções musculoesqueléticas e reabilitação funcional.",
   },
   {
-    img: "/images/demo pilates.png",
+    img: "/images/demo-pilates.png",
     titulo: "Pilates",
     desc: "Individual ou em grupo. Método aplicado com precisão, adaptado aos seus objetivos.",
   },
   {
-    img: "/images/demo ondas.jpeg",
+    img: "/images/demo-ondas.jpeg",
     titulo: "Ondas de Choque",
     desc: "Alta eficácia para tendinopatias, fascites e calcificações em poucos atendimentos.",
+  },
+  {
+    titulo: "Dry Needling",
+    desc: "Técnica com agulhas finas para liberar pontos de tensão muscular e aliviar a dor de forma precisa.",
+  },
+  {
+    titulo: "Recovery",
+    desc: "Protocolos para acelerar a recuperação e a regeneração muscular após sessões e esforços.",
   },
 ];
 
@@ -149,7 +157,7 @@ export default function Home() {
       {/* ══════════════════════════════════════
           TOP BAR — visível só em desktop
       ══════════════════════════════════════ */}
-      <div className="hidden md:flex bg-[#cc3366] text-white py-2 px-4 justify-end gap-6 text-xs">
+      <div className="flex bg-[#cc3366] text-white py-2 px-4 justify-between md:justify-end gap-3 md:gap-6 text-xs">
         <a href={TEL} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
           aria-label="Ligar para Lúcia Lafayete">
           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -178,17 +186,17 @@ export default function Home() {
           backdropFilter: scrolled ? "blur(10px)" : "none",
         }}
       >
-        <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16 md:h-24">
+        <div className="max-w-6xl mx-auto px-4 flex items-center justify-between min-h-16 md:min-h-28">
           {/* Logo SVG */}
           <a href="#" className="flex items-center flex-shrink-0 transition-transform duration-300 hover:scale-105">
             <Image
-              src="/images/Lucia-logo.svg"
-              alt="Lúcia Lafayete"
-              width={200}
-              height={76}
-              className="h-14 md:h-20 w-auto object-contain"
+              src="/images/logo-nova.png"
+              alt="Lúcia Lafayete — Fisioterapia e Osteopatia"
+              width={220}
+              height={88}
+              className="h-24 md:h-28 w-auto object-contain"
               priority
-              style={{ filter: 'drop-shadow(0 2px 8px rgba(13, 90, 99, 0.15))' }}
+              style={{ filter: 'drop-shadow(0 3px 10px rgba(13, 90, 99, 0.25))' }}
             />
           </a>
 
@@ -218,7 +226,7 @@ export default function Home() {
           </a>
 
           {/* Mobile: ícone WA + hamburger */}
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex md:hidden items-center gap-2 flex-shrink-0 pl-1">
             <a href={WA} target="_blank" rel="noreferrer"
               className="flex items-center gap-1.5 bg-[#25D366] text-white text-xs font-semibold px-3 py-2 rounded-full"
               aria-label="WhatsApp">
@@ -277,7 +285,7 @@ export default function Home() {
           Mobile: rosto enquadrado + scrim escuro, texto no topo-esquerda
           PC: foto ancorada à direita, texto à esquerda
       ══════════════════════════════════════ */}
-      <section id="home" className="relative overflow-hidden min-h-[92svh]">
+      <section id="home" className="relative overflow-hidden min-h-[calc(100svh-8.5rem)] md:min-h-[calc(100svh-9.5rem)]">
         {/* Doutora como fundo — full-bleed cobrindo o hero */}
         <div className="absolute inset-0">
           <Image
@@ -304,7 +312,7 @@ export default function Home() {
         }} aria-hidden />
 
         {/* Conteúdo — texto sobreposto no rodapé (mobile) e à esquerda (desktop), tudo visível na 1ª dobra */}
-        <div className="relative z-10 h-full min-h-[92svh] max-w-6xl mx-auto px-5
+        <div className="relative z-10 h-full min-h-[calc(100svh-8.5rem)] md:min-h-[calc(100svh-9.5rem)] max-w-6xl mx-auto px-5
           flex flex-col justify-end md:justify-center pt-20 pb-12 md:py-28">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -371,22 +379,33 @@ export default function Home() {
             </p>
           </FadeIn>
 
-          {/* Grid: 2 col em mobile, 4 em desktop */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          {/* Grid: 2 col em mobile, 3 em desktop */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-8">
             {servicos.map((s, i) => (
               <FadeIn key={s.titulo} delay={i * 0.08}>
-                <motion.div whileTap={{ scale: 0.98 }} className="flex flex-col items-center text-center">
-                  {/* Imagem contida, sem crop */}
-                  <div className="w-full mb-4 rounded-2xl overflow-hidden shadow-sm
-                    flex items-center justify-center" style={{ height: "220px" }}>
-                    <Image
-                      src={s.img}
-                      alt={s.titulo}
-                      width={300}
-                      height={148}
-                      className="w-full h-full object-cover object-center"
-                    />
-                  </div>
+                <motion.div whileTap={{ scale: 0.98 }} className="flex flex-col items-center text-center h-full">
+                  {s.img ? (
+                    <div className="w-full mb-4 rounded-2xl overflow-hidden shadow-sm
+                      flex items-center justify-center" style={{ height: "220px" }}>
+                      <Image
+                        src={s.img}
+                        alt={s.titulo}
+                        width={300}
+                        height={148}
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-full mb-4 rounded-2xl overflow-hidden bg-[#fdf5f8]
+                      border border-[#f3e2eb] flex items-center justify-center"
+                      style={{ height: "220px" }}>
+                      <span aria-hidden
+                        className="text-[#cc3366]/15 font-bold select-none leading-none"
+                        style={{ fontFamily: "Sora, sans-serif", fontSize: "6rem" }}>
+                        {s.titulo.charAt(0)}
+                      </span>
+                    </div>
+                  )}
                   <h3 className="text-[#222] font-bold text-sm md:text-base mb-1"
                     style={{ fontFamily: "Sora, sans-serif" }}>
                     {s.titulo}
@@ -447,7 +466,7 @@ export default function Home() {
               <div className="w-56 sm:w-72 md:w-80 mx-auto rounded-3xl overflow-hidden shadow-xl"
                 style={{ aspectRatio: "3/4" }}>
                 <Image
-                  src="/images/lucia fundo 2.jpg"
+                  src="/images/lucia-fundo-2.jpg"
                   alt="Lúcia Lafayete — Fisioterapeuta"
                   width={400}
                   height={533}
@@ -460,25 +479,33 @@ export default function Home() {
             <FadeIn delay={0.05} className="flex-1">
               <div className="space-y-4 text-[#4a4a4a] text-sm md:text-base leading-relaxed">
                 <p>
-                  Fisioterapeuta com foco em tratamentos que fazem sentido
-                  para a vida real de cada pessoa.
+                  Sou fisioterapeuta, com formação em <strong className="text-[#222]">Osteopatia</strong>{" "}
+                  pela Escola de Osteopatia de Madrid (EOM), e trabalho com
+                  uma abordagem individualizada para cuidar da dor,
+                  recuperar movimentos e melhorar a funcionalidade.
                 </p>
                 <p>
-                  Minha principal especialidade é a{" "}
-                  <strong className="text-[#222]">Osteopatia</strong> — uma abordagem
-                  que enxerga o corpo de forma global, vai além do sintoma e busca
-                  a causa real do problema.
+                  Meu atendimento integra Fisioterapia, Osteopatia, Reabilitação
+                  Pós-Operatória, Dry Needling e Recovery, de acordo com as
+                  necessidades de cada paciente.
                 </p>
                 <p>
-                  Atendo no <strong className="text-[#222]">Leblon</strong>, em espaço
-                  compartilhado com outra profissional, e também realizo{" "}
+                  Acredito que cada corpo tem uma história e que o tratamento
+                  deve olhar para a pessoa como um todo — não apenas para o sintoma.
+                </p>
+                <p>
+                  Meu propósito é ajudar você a se movimentar melhor, recuperar
+                  sua autonomia e viver com mais qualidade.
+                </p>
+                <p>
+                  Atendo no <strong className="text-[#222]">Leblon</strong> e também realizo{" "}
                   <strong className="text-[#222]">atendimentos a domicílio</strong>.
-                  Trabalho sozinha — isso garante mais atenção e consistência para
-                  cada paciente.
+                  Agenda restrita, sem recepção e sem intermediários.
+                  Não trabalho com crianças. Agendamento somente pelo WhatsApp.
                 </p>
-                <p>
-                  Atendo <strong className="text-[#222]">atletas, adultos, jovens e idosos</strong>.
-                  Agendamento exclusivamente pelo WhatsApp.
+                <p className="text-[#cc3366] font-medium">
+                  Cuidado personalizado. Tratamento baseado em movimento.
+                  Resultados que fazem diferença.
                 </p>
                 <p className="text-xs text-[#69727d]">
                   CREFITO-2 · 290936-F
@@ -512,8 +539,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { n: "01", titulo: "Fale pelo WhatsApp", desc: "Sem formulários. Primeiro contato direto e sem espera." },
-              { n: "02", titulo: "Avaliação inicial", desc: "Escuta do histórico, exame físico e definição das prioridades." },
-              { n: "03", titulo: "Plano de tratamento", desc: "Protocolo individualizado com evolução monitorada a cada sessão." },
+              { n: "02", titulo: "Avaliação inicial", desc: "Escuta do histórico, exame físico, exame dinâmico e definição das prioridades." },
+              { n: "03", titulo: "Plano de tratamento", desc: "Individualizado, com evolução monitorada a cada sessão." },
             ].map((p, i) => (
               <FadeIn key={p.n} delay={i * 0.1}>
                 <div className="flex gap-4 md:flex-col md:gap-3 md:items-center md:text-center
@@ -640,12 +667,12 @@ export default function Home() {
                   </p>
                   <h3 className="text-lg font-bold text-white mb-2"
                     style={{ fontFamily: "Sora, sans-serif" }}>
-                    Leblon, Rio de Janeiro
+                    Inspirit Fisio · Leblon
                   </h3>
                   <p className="text-white/70 text-sm leading-relaxed mb-5">
                     Av. Ataulfo de Paiva, 1175 / 205<br />
                     Leblon, Rio de Janeiro<br />
-                    Sala compartilhada · Apenas com agendamento
+                    Apenas com agendamento
                   </p>
                   <a href={WA} target="_blank" rel="noreferrer"
                     className="inline-flex items-center gap-2 bg-[#cc3366] text-white
@@ -810,8 +837,8 @@ export default function Home() {
                   a: "O atendimento é particular. Você pode solicitar a nota fiscal e declarar os valores como dedução em saúde no seu imposto de renda.",
                 },
                 {
-                  q: "Atende idosos e atletas?",
-                  a: "Sim. Atendo atletas, adultos, jovens e idosos. O plano é sempre individualizado conforme o seu perfil e seus objetivos.",
+                  q: "Para quem é o atendimento?",
+                  a: "O atendimento é individual e conduzido diretamente por mim, do início ao fim. A agenda é limitada para garantir plena atenção a cada paciente. Não trabalho com crianças.",
                 },
                 {
                   q: "O atendimento a domicílio tem taxa?",
@@ -885,7 +912,7 @@ export default function Home() {
                     className="w-7 h-7 object-contain" />
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-[#222] text-sm">Consultório</p>
+                  <p className="font-bold text-[#222] text-sm">Consultório · Inspirit Fisio</p>
                   <p className="text-[#69727d] text-xs mt-0.5">Av. Ataulfo de Paiva, 1175/205</p>
                 </div>
               </div>
@@ -921,7 +948,7 @@ export default function Home() {
             {/* Logo + descrição */}
             <div className="flex flex-col items-center md:items-start gap-3 max-w-xs">
               <Image
-                src="/images/Lucia-logo.svg"
+                src="/images/logo.svg"
               alt="Lúcia Lafayete"
               width={200}
               height={70}
@@ -960,6 +987,7 @@ export default function Home() {
             {/* Contato */}
             <div className="flex flex-col items-center md:items-start gap-2">
               <p className="font-bold text-xs uppercase tracking-wider mb-1">Contato</p>
+              <p className="text-white/60 text-sm">Inspirit Fisio</p>
               <p className="text-white/60 text-sm">Av. Ataulfo de Paiva, 1175 / 205</p>
               <p className="text-white/60 text-sm">Leblon, Rio de Janeiro</p>
               <p className="text-white/60 text-sm">Atendimento a domicílio</p>

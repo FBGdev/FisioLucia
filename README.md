@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lúcia Lafayete — Fisioterapia e Osteopatia no Leblon
 
-## Getting Started
+Site profissional da fisioterapeuta Lúcia Lafayete: atendimento em Fisioterapia, Osteopatia, Pilates, Ondas de Choque, Dry Needling e Recovery, no Leblon e a domicílio. O site funciona como ferramenta de aquisição de pacientes — o WhatsApp é o principal canal de conversão.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Next.js 16 (App Router) + TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animações:** Motion (ex-Motion One)
+- **SEO:** Metadata API + JSON-LD (`MedicalBusiness`)
+- **Deploy:** Vercel
+
+## Como rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando       | Descrição                          |
+| ------------- | ---------------------------------- |
+| `npm run dev` | Servidor de desenvolvimento        |
+| `npm run build` | Build de produção                |
+| `npm run start` | Serve o build de produção        |
+| `npm run lint`  | ESLint                            |
 
-## Learn More
+## Estrutura
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  layout.tsx      # Root layout, metadata e JSON-LD
+  page.tsx        # Single page com todas as seções
+  globals.css     # Import do Tailwind e estilos globais
+public/
+  images/         # Fotos da profissional, do espaço e logos
+next.config.ts    # Configuração do Next.js
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Conteúdo editável
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Dados de contato (WhatsApp, telefone, Instagram, endereço) no topo de `app/page.tsx` e `app/layout.tsx`.
+- Serviços, depoimentos e textos das seções: `app/page.tsx`.
+- Metadata e JSON-LD (SEO): `app/layout.tsx`.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Ajustar dados de contato e fotos reais em `public/images/`.
+2. Enviar para o repositório Git.
+3. Importar na Vercel e configurar o domínio personalizado.

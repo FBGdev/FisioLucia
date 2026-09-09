@@ -1,7 +1,8 @@
 {
-  "name": "sintonia-clone",
-  "version": "0.1.0",
+  "name": "lucia-lafayete",
+  "version": "1.0.0",
   "private": true,
+  "description": "Site da fisioterapeuta Lúcia Lafayete — Fisioterapia, Osteopatia e Pilates no Leblon.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
