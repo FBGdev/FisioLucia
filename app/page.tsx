@@ -38,7 +38,7 @@ function FadeIn({
 }
 
 /* ─── DADOS ─── */
-const servicos: { img?: string; titulo: string; desc: string }[] = [
+const servicos = [
   {
     img: "/images/demo-osteo.jpeg",
     titulo: "Osteopatia",
@@ -58,14 +58,6 @@ const servicos: { img?: string; titulo: string; desc: string }[] = [
     img: "/images/demo-ondas.jpeg",
     titulo: "Ondas de Choque",
     desc: "Alta eficácia para tendinopatias, fascites e calcificações em poucos atendimentos.",
-  },
-  {
-    titulo: "Dry Needling",
-    desc: "Técnica com agulhas finas para liberar pontos de tensão muscular e aliviar a dor de forma precisa.",
-  },
-  {
-    titulo: "Recovery",
-    desc: "Protocolos para acelerar a recuperação e a regeneração muscular após sessões e esforços.",
   },
 ];
 
@@ -379,33 +371,22 @@ export default function Home() {
             </p>
           </FadeIn>
 
-          {/* Grid: 2 col em mobile, 3 em desktop */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-8">
+          {/* Grid: 2 col em mobile, 4 em desktop */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {servicos.map((s, i) => (
               <FadeIn key={s.titulo} delay={i * 0.08}>
-                <motion.div whileTap={{ scale: 0.98 }} className="flex flex-col items-center text-center h-full">
-                  {s.img ? (
-                    <div className="w-full mb-4 rounded-2xl overflow-hidden shadow-sm
-                      flex items-center justify-center" style={{ height: "220px" }}>
-                      <Image
-                        src={s.img}
-                        alt={s.titulo}
-                        width={300}
-                        height={148}
-                        className="w-full h-full object-cover object-center"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-full mb-4 rounded-2xl overflow-hidden bg-[#fdf5f8]
-                      border border-[#f3e2eb] flex items-center justify-center"
-                      style={{ height: "220px" }}>
-                      <span aria-hidden
-                        className="text-[#cc3366]/15 font-bold select-none leading-none"
-                        style={{ fontFamily: "Sora, sans-serif", fontSize: "6rem" }}>
-                        {s.titulo.charAt(0)}
-                      </span>
-                    </div>
-                  )}
+                <motion.div whileTap={{ scale: 0.98 }} className="flex flex-col items-center text-center">
+                  {/* Imagem contida, sem crop */}
+                  <div className="w-full mb-4 rounded-2xl overflow-hidden shadow-sm
+                    flex items-center justify-center" style={{ height: "220px" }}>
+                    <Image
+                      src={s.img}
+                      alt={s.titulo}
+                      width={300}
+                      height={148}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
                   <h3 className="text-[#222] font-bold text-sm md:text-base mb-1"
                     style={{ fontFamily: "Sora, sans-serif" }}>
                     {s.titulo}
