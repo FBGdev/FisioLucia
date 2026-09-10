@@ -48,6 +48,7 @@ const servicos = [
     img: "/images/demo-fisio.png",
     titulo: "Fisioterapia",
     desc: "Avaliação individualizada para dor, disfunções musculoesqueléticas e reabilitação funcional.",
+    contain: true,
   },
   {
     img: "/images/demo-pilates.png",
@@ -151,7 +152,7 @@ export default function Home() {
       ══════════════════════════════════════ */}
       <div className="flex bg-[#cc3366] text-white py-2 px-4 justify-between md:justify-end gap-3 md:gap-6 text-xs">
         <a href={TEL} className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
-          aria-label="Ligar para Lúcia Lafayete">
+          aria-label="Ligar para Dra. Lúcia Lafayete">
           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
           </svg>
@@ -183,7 +184,7 @@ export default function Home() {
           <a href="#" className="flex items-center flex-shrink-0 transition-transform duration-300 hover:scale-105">
             <Image
               src="/images/logo-nova.png"
-              alt="Lúcia Lafayete — Fisioterapia e Osteopatia"
+              alt="Dra. Lúcia Lafayete — Fisioterapia e Osteopatia"
               width={220}
               height={88}
               className="h-24 md:h-28 w-auto object-contain"
@@ -282,7 +283,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="/images/lucia-bg.png"
-            alt="Lúcia Lafayete — Fisioterapeuta"
+            alt="Dra. Lúcia Lafayete — Fisioterapeuta"
             fill
             className="object-cover object-center md:object-contain md:object-right"
             priority
@@ -315,9 +316,13 @@ export default function Home() {
               Fisioterapia · Osteopatia · Pilates
             </p>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-3 text-white"
-              style={{ fontFamily: "Sora, sans-serif" }}>
-              Lúcia<br />Lafayete
+            <h1 className="hero-display-name text-5xl md:text-7xl font-semibold leading-[0.88]
+              tracking-[-0.035em] mb-5 text-white text-wrap-balance">
+              <span className="block text-xl md:text-2xl font-medium italic tracking-normal leading-none mb-2 text-white/90">
+                Dra.
+              </span>
+              <span className="block">Lúcia</span>
+              <span className="block">Lafayete</span>
             </h1>
 
             <p className="text-base md:text-lg text-white leading-relaxed mb-5">
@@ -367,7 +372,9 @@ export default function Home() {
               Serviços
             </h2>
             <p className="text-[#69727d] text-center text-sm md:text-base max-w-xl mx-auto mb-12">
-              Cada sessão é planejada para você — sem protocolo genérico, sem pressa.
+              Recursos terapêuticos definidos a partir de uma avaliação individual.
+              O trabalho é focado na investigação da causa raiz da dor e na
+              restauração do movimento e da funcionalidade.
             </p>
           </FadeIn>
 
@@ -376,7 +383,7 @@ export default function Home() {
             {servicos.map((s, i) => (
               <FadeIn key={s.titulo} delay={i * 0.08}>
                 <motion.div whileTap={{ scale: 0.98 }} className="flex flex-col items-center text-center">
-                  {/* Imagem contida, sem crop */}
+                  {/* Imagem contida, sem crop. Fisioterapia sobe a imagem para mostrar o rosto */}
                   <div className="w-full mb-4 rounded-2xl overflow-hidden shadow-sm
                     flex items-center justify-center" style={{ height: "220px" }}>
                     <Image
@@ -384,7 +391,7 @@ export default function Home() {
                       alt={s.titulo}
                       width={300}
                       height={148}
-                      className="w-full h-full object-cover object-center"
+                      className={`w-full h-full object-cover ${s.contain ? "object-[50%_32%]" : "object-center"}`}
                     />
                   </div>
                   <h3 className="text-[#222] font-bold text-sm md:text-base mb-1"
@@ -402,7 +409,7 @@ export default function Home() {
           {/* Tags extras */}
           <FadeIn delay={0.25}>
             <div className="mt-8 flex flex-wrap justify-center gap-2">
-              {["Reabilitação Funcional", "Pós-operatório", "Atendimento Domiciliar"].map((tag) => (
+              {["Reabilitação Funcional", "Pós-operatório"].map((tag) => (
                 <span key={tag}
                   className="px-3 py-1.5 rounded-full border border-[#e0d6cc] text-xs text-[#69727d]">
                   {tag}
@@ -437,7 +444,7 @@ export default function Home() {
             </p>
             <h2 className="text-2xl md:text-4xl font-bold text-[#222] text-center mb-10"
               style={{ fontFamily: "Sora, sans-serif" }}>
-              Quem é Lúcia Lafayete?
+              Quem é a Dra. Lúcia Lafayete?
             </h2>
           </FadeIn>
 
@@ -448,7 +455,7 @@ export default function Home() {
                 style={{ aspectRatio: "3/4" }}>
                 <Image
                   src="/images/lucia-fundo-2.jpg"
-                  alt="Lúcia Lafayete — Fisioterapeuta"
+                  alt="Dra. Lúcia Lafayete — Fisioterapeuta"
                   width={400}
                   height={533}
                   className="w-full h-full object-cover object-top"
@@ -460,10 +467,9 @@ export default function Home() {
             <FadeIn delay={0.05} className="flex-1">
               <div className="space-y-4 text-[#4a4a4a] text-sm md:text-base leading-relaxed">
                 <p>
-                  Sou fisioterapeuta, com formação em <strong className="text-[#222]">Osteopatia</strong>{" "}
-                  pela Escola de Osteopatia de Madrid (EOM), e trabalho com
-                  uma abordagem individualizada para cuidar da dor,
-                  recuperar movimentos e melhorar a funcionalidade.
+                  Sou fisioterapeuta, com formação em Osteopatia, e trabalho com
+                  uma abordagem individualizada para cuidar da dor, recuperar
+                  movimentos e melhorar a funcionalidade.
                 </p>
                 <p>
                   Meu atendimento integra Fisioterapia, Osteopatia, Reabilitação
@@ -472,17 +478,11 @@ export default function Home() {
                 </p>
                 <p>
                   Acredito que cada corpo tem uma história e que o tratamento
-                  deve olhar para a pessoa como um todo — não apenas para o sintoma.
+                  deve olhar para a pessoa como um todo{"  "}não apenas para o sintoma.
                 </p>
                 <p>
                   Meu propósito é ajudar você a se movimentar melhor, recuperar
                   sua autonomia e viver com mais qualidade.
-                </p>
-                <p>
-                  Atendo no <strong className="text-[#222]">Leblon</strong> e também realizo{" "}
-                  <strong className="text-[#222]">atendimentos a domicílio</strong>.
-                  Agenda restrita, sem recepção e sem intermediários.
-                  Não trabalho com crianças. Agendamento somente pelo WhatsApp.
                 </p>
                 <p className="text-[#cc3366] font-medium">
                   Cuidado personalizado. Tratamento baseado em movimento.
@@ -552,7 +552,7 @@ export default function Home() {
               O que dizem os pacientes
             </h2>
             <p className="text-[#69727d] text-center text-sm max-w-xl mx-auto mb-10">
-              Veja como o atendimento da Lúcia tem ajudado pessoas a recuperarem qualidade de vida.
+              Veja como o atendimento da Dra. Lúcia tem ajudado pessoas a recuperarem qualidade de vida.
             </p>
           </FadeIn>
 
@@ -632,8 +632,7 @@ export default function Home() {
               Onde atendo
             </h2>
             <p className="text-white/75 text-center text-sm max-w-xl mx-auto mb-12">
-              Atendimento presencial no Leblon e a domicílio.
-              Sempre mediante agendamento pelo WhatsApp.
+              Atendimento no Leblon, exclusivamente com hora marcada.
             </p>
           </FadeIn>
 
@@ -665,28 +664,20 @@ export default function Home() {
                 </div>
               </FadeIn>
 
-              {/* Domicílio */}
+              {/* Opção adicional — atendimento domiciliar sem competir com o consultório */}
               <FadeIn delay={0.1}>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                  <p className="text-xs font-bold uppercase tracking-widest mb-2 text-white/50">
-                    Domicílio
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-widest mb-2 text-white/45">
+                    Disponibilidade adicional
                   </p>
-                  <h3 className="text-lg font-bold text-white mb-2"
+                  <h3 className="text-base font-semibold text-white/90 mb-2"
                     style={{ fontFamily: "Sora, sans-serif" }}>
-                    Atendimento em casa
+                    Atendimento a domicílio
                   </h3>
-                  <p className="text-white/70 text-sm leading-relaxed mb-5">
-                    Para quem prefere ou precisa receber o
-                    atendimento na própria residência.
-                    Consulte disponibilidade.
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    Disponível sob consulta, conforme a região e a agenda.
+                    Solicite informações pelo WhatsApp.
                   </p>
-                  <a href={WA} target="_blank" rel="noreferrer"
-                    className="inline-flex items-center gap-2 bg-white/10 border border-white/30
-                      text-white text-sm font-medium px-5 py-2.5 rounded-full
-                      hover:bg-white/20 transition-colors active:scale-95">
-                    <IconWA className="w-4 h-4" />
-                    Consultar disponibilidade
-                  </a>
                 </div>
               </FadeIn>
             </div>
@@ -749,7 +740,7 @@ export default function Home() {
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6" role="radiogroup"
                 aria-label="Serviço desejado">
-                {["Avaliação", "Osteopatia", "Fisioterapia", "Pilates", "Ondas de Choque", "Domicílio"].map((s) => (
+                {["Avaliação", "Osteopatia", "Fisioterapia", "Pilates", "Ondas de Choque"].map((s) => (
                   <button
                     key={s}
                     type="button"
@@ -768,7 +759,7 @@ export default function Home() {
               <p className="text-[#4a4a4a] text-sm leading-relaxed mb-6">
                 Olá! Gostaria de agendar uma{" "}
                 <strong className="text-[#cc3366]">{servicoSel.toLowerCase()}</strong>{" "}
-                com a Lúcia Lafayete.
+                com a Dra. Lúcia Lafayete.
               </p>
 
               <a
@@ -819,11 +810,7 @@ export default function Home() {
                 },
                 {
                   q: "Para quem é o atendimento?",
-                  a: "O atendimento é individual e conduzido diretamente por mim, do início ao fim. A agenda é limitada para garantir plena atenção a cada paciente. Não trabalho com crianças.",
-                },
-                {
-                  q: "O atendimento a domicílio tem taxa?",
-                  a: "O valor do deslocamento é somado ao da sessão. Consulte a disponibilidade pelo WhatsApp conforme a sua região.",
+                  a: "O atendimento é individual, voltado a adultos e conduzido diretamente por mim, do início ao fim, com atenção às necessidades e aos objetivos de cada pessoa.",
                 },
                 {
                   q: "Preciso de encaminhamento médico?",
@@ -930,7 +917,7 @@ export default function Home() {
             <div className="flex flex-col items-center md:items-start gap-3 max-w-xs">
               <Image
                 src="/images/logo.svg"
-              alt="Lúcia Lafayete"
+              alt="Dra. Lúcia Lafayete"
               width={200}
               height={70}
                 className="h-20 w-auto object-contain brightness-0 invert"
@@ -938,7 +925,7 @@ export default function Home() {
               />
               <p className="text-white/65 text-xs text-center md:text-left leading-relaxed">
                 Fisioterapeuta especializada em Osteopatia.
-                Atendimento personalizado no Leblon e a domicílio.
+                Atendimento personalizado no Leblon.
               </p>
               <div className="flex gap-3">
                 <a href={WA} target="_blank" rel="noreferrer" aria-label="WhatsApp"
@@ -971,13 +958,12 @@ export default function Home() {
               <p className="text-white/60 text-sm">Inspirit Fisio</p>
               <p className="text-white/60 text-sm">Av. Ataulfo de Paiva, 1175 / 205</p>
               <p className="text-white/60 text-sm">Leblon, Rio de Janeiro</p>
-              <p className="text-white/60 text-sm">Atendimento a domicílio</p>
               <a href={WA} target="_blank" rel="noreferrer"
                 className="text-white/60 text-sm hover:text-white transition-colors">
                 Agendar pelo WhatsApp
               </a>
               <a href={TEL} className="text-white/60 text-sm hover:text-white transition-colors"
-          aria-label="Ligar para Lúcia Lafayete">
+          aria-label="Ligar para Dra. Lúcia Lafayete">
                 (21) 97279-6543
               </a>
             </div>
@@ -986,7 +972,7 @@ export default function Home() {
           <div className="border-t border-white/15 pt-6 flex flex-col md:flex-row
             items-center justify-between gap-2">
             <p className="text-white/40 text-xs text-center">
-              © 2025 Lúcia Lafayete Fisioterapia — Todos os direitos reservados.
+              © 2025 Dra. Lúcia Lafayete Fisioterapia — Todos os direitos reservados.
             </p>
             <p className="text-white/25 text-xs">CREFITO-2 · 290936-F · Leblon · RJ</p>
           </div>
